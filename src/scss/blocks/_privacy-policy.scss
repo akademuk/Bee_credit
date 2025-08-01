@@ -1,0 +1,110 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+@use "./layout/mixins" as *;
+@use "./layout/typography" as *;
+
+.privacy-policy__main {
+    overflow: visible;
+}
+
+.page-holder-visible {
+    overflow: visible;
+}
+
+.privacy-policy__hero {
+    padding: 32px 0;
+    
+    .container {
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 48px;
+        align-self: stretch;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    &-content {
+        display: flex;
+        min-width: 288px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        flex: 1 0 0;
+
+        h1 {
+            color: var(--color-gray-900);
+            font-size: 29px;
+            font-weight: 600;
+            line-height: 120%; 
+            margin: 0;
+
+            @media (min-width: $pc) {
+                font-size: 40px;
+            }
+        }
+
+        h2 {
+            color: var(--color-gray-900);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 120%; 
+            margin: 0;
+
+            @media (min-width: $pc) {
+                font-size: 16px;
+            }
+        }
+
+        p, li, b {
+            color: var(--color-gray-600);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 120%; 
+        }
+
+        b {
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+    }
+
+    &-calc {
+        display: flex;
+        min-width: 288px;
+        padding: 8px;
+        align-items: flex-start;
+        flex: 1 0 0;
+        border-radius: 24px;
+        background: var(--color-amber-400);
+
+        @media (min-width: $pc) {
+            max-width: 376px;
+            position: sticky;
+            top: 80px;
+        }
+
+        .credit-box__content {
+            padding: 32px 16px;
+            border-radius: 20px;
+        }
+    }
+
+    &-box,
+    &-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+    }
+
+    .privacy-policy__list {
+        list-style: decimal;
+    }
+}

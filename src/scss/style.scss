@@ -1,0 +1,36 @@
+@forward "./includes/normalize";
+@forward "./includes/simplebar";
+@forward "./includes/swiper";
+
+@forward "./layout/colors";
+@forward "./layout/variables";
+@forward "./layout/mixins";
+@forward "./layout/typography";
+@forward "./layout/base";
+@forward "./layout/common";
+@forward "./layout/buttons";
+@forward "./layout/links";
+
+
+@forward 'blocks/header';
+@forward 'blocks/hero';
+@forward 'blocks/benefits';
+@forward 'blocks/calculator';
+@forward 'blocks/instructions';
+@forward 'blocks/faq';
+@forward 'blocks/pay-credit';
+@forward 'blocks/reviews';
+@forward 'blocks/links-columns';
+@forward 'blocks/articles';
+@forward 'blocks/info';
+@forward 'blocks/footer';
+
+
+@forward 'blocks/registration';
+@forward 'blocks/authorization';
+@forward 'blocks/application';
+@forward 'blocks/timer';
+
+@forward 'blocks/404';
+@forward 'blocks/thank-you';
+@forward 'blocks/privacy-policy';

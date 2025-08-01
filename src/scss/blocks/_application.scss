@@ -1,0 +1,125 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+@use "./layout/mixins" as *;
+@use "./layout/typography" as *;
+
+.application-main {
+  .registration-container {
+    .container {
+      gap: 24px;
+
+      @media (min-width: $pc) {
+        gap: 48px;
+      }
+    }
+  }
+  .registration-form {
+    .form {
+      .form__box {
+        padding: 24px;
+
+        @media (min-width: $pc) {
+            padding: 32px 48px;
+        }
+
+        .calculator__credit-content {
+          gap: 24px;
+          width: 100%;
+
+          @media (min-width: $pc) {
+            gap: 26px;
+          }
+
+          .credit-form__label {
+            gap: 12px;
+            width: 100%;
+            flex-wrap: wrap;
+          }
+
+          .calculator__form-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+            gap: 16px;
+            align-self: stretch;
+            flex-wrap: wrap;
+
+            .credit-form__range-btn {
+              display: flex;
+              height: 32px;
+              min-width: 32px;
+              padding: 6px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 99px;
+              border: 1.5px solid var(--color-gray-200);
+              background: var(--color-neutral-0);
+              cursor: pointer;
+
+              &:hover {
+                span {
+                    color: var(--color-amber-700);
+                }
+              }
+
+              span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: all 0.3s;
+              }
+            }
+
+            .credit-form__field {
+              width: calc(100% - 96px);
+            }
+          }
+        }
+
+        .credit-form__field {
+          width: 100%;
+
+          .credit-form__term {
+            strong {
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .calculator__title {
+          font-size: 29px;
+          margin: 0;
+
+          @media (min-width: $pc) {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    .calculator__info-value {
+      white-space: nowrap;
+    }
+
+    .calculator__info-item {
+        gap: 8px;
+    }
+
+    .credit-form__submit {
+      width: 100%;
+
+      @media (min-width: $pc) {
+        margin-top: 14px;
+      }
+    }
+  }
+}
+
+.application-main .registration-form .form__box:nth-last-of-type(1) {
+          @media (min-width: $pc) {
+            padding: 32px 48px;
+        }
+}

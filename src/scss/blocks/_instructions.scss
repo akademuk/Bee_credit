@@ -1,0 +1,176 @@
+@use '../layout/variables' as *;
+@use '../layout/colors' as *;
+@use '../layout/mixins' as *;
+@use '../layout/typography' as *;
+
+.instructions {
+	padding: 48px 0;
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	position: relative;
+
+	.container {
+		display: flex;
+		align-items: flex-start;
+		align-content: flex-start;
+		gap: 24px;
+		align-self: stretch;
+		flex-wrap: wrap;
+	}
+
+	@media (min-width: $pc) {
+		padding: 64px 0 52px;
+	}
+
+	&:before {
+		content: '';
+		width: 100vw;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: var(--color-neutral-50);
+		background-image: url('../images/bg.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 0 0;
+		display: block;
+		z-index: -1;
+	}
+
+	@media (min-width: $pc) {
+		background-image: url('../images/bg8.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 0 0;
+	}
+
+	&__title {
+		font-size: 29px;
+		margin-bottom: 24px;
+		letter-spacing: 0.6px;
+
+		@media (min-width: $pc) {
+			font-size: 40px;
+			margin-bottom: 48px;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__col-left {
+		min-width: 288px;
+		flex: 1 0 0;
+	}
+
+	&__col-right {
+		min-width: 288px;
+		min-height: 391px;
+		flex: 1 0 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+			object-fit: contain;
+			object-position: top;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.instructions-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	counter-reset: item;
+	margin-bottom: 16px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (min-width: $pc) {
+		gap: 17px;
+	}
+}
+
+.instructions-list-item {
+	color: var(--color-gray-600);
+	background: $white;
+	border-radius: 20px;
+	display: flex;
+	padding: 16px 16px 16px 60px;
+	flex-direction: column;
+	gap: 4px;
+	position: relative;
+	font-size: 14px;
+	counter-increment: item;
+
+	@media (min-width: $pc) {
+		padding: 32px 32px 32px 90px;
+		border-radius: 42px;
+	}
+
+	&:before,
+	&:after {
+		width: 32px;
+		height: 32px;
+		left: 16px;
+		position: absolute;
+		top: 16px;
+
+		@media (min-width: $pc) {
+			width: 42px;
+			height: 42px;
+			left: 32px;
+		}
+	}
+
+	&:before {
+		content: '';
+		background-image: url('../images/marker.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		@media (min-width: $pc) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&:after {
+		content: counter(item);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--color-gray-900);
+		font-weight: 500;
+		font-size: 14px;
+		transform: translateY(calc(-50% - -13px));
+
+		@media (min-width: $pc) {
+			font-size: 16px;
+			font-weight: 600;
+			top: 50%;
+			transform: translateY(calc(-50% + -3px));
+		}
+	}
+
+	&__title {
+		color: var(--color-gray-900);
+		font-weight: 600;
+		font-size: 16px;
+
+		@media (min-width: $pc) {
+			font-size: 21px;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "bee-credit",
+  "version": "1.0.0",
+  "description": "Bee Credit - Financial Services Website",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "start": "gulp serve",
+    "clean": "gulp clean",
+    "watch": "gulp serve"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^6.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^5.0.0",
+    "imagemin-webp": "^8.0.0",
+    "sass": "^1.83.0"
+  }
+}

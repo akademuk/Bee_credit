@@ -1,0 +1,261 @@
+@use './variables' as *;
+@use './colors' as *;
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*::before,
+*::after {
+	display: inline-block;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 16px;
+	margin: 0 auto;
+}
+
+.container {
+	width: 100%;
+	max-width: 832px;
+	padding: 0 16px;
+	margin: 0 auto;
+
+	@media (min-width: $pc) {
+		width: 100%;
+		max-width: 1176px;
+		padding: 0;
+	}
+}
+
+body {
+	color: var(--color-gray-900);
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	line-height: 1.2;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@media (min-width: $pc) {
+		font-size: 16px;
+	}
+
+	&.header-active {
+		overflow: hidden;
+	}
+}
+
+.page-holder {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	> main {
+		flex: 1 1 auto;
+	}
+
+	> * {
+		min-width: 0;
+	}
+}
+
+main {
+	overflow-x: hidden;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+input[type="date"],  
+select, 
+textarea {
+ 	height: 35px;
+	width: 100%;
+	padding: 8px;
+  	transition: all 0.3s ease; 
+	border-radius: 4px;
+	border: 1px solid var(--color-gray-200);
+	background: var(--color-neutral-0);
+	font-family: inherit;
+	color: var(--color-gray-500);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 120%; 
+	position: relative;
+	outline: none;
+	
+	@media (min-width: $pc) {
+		font-size: 16px;
+	}
+}
+
+
+.form-select {
+	position: relative;
+	width: 100%;
+}
+
+.form-select::after {
+  content: ''; 
+  background: url('../images/select.svg') no-repeat center center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%) rotate(0deg); 
+  transition: transform 0.3s ease; 
+  pointer-events: none;
+}
+
+.form-select.open::after {
+  transform: translateY(-50%) rotate(180deg); 
+}
+
+input::placeholder, textarea::placeholder {
+	font-family: inherit;
+	color: var(--color-gray-500);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 120%; 
+	
+	@media (min-width: $pc) {
+		font-size: 16px;
+	}
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus, 
+input[type="date"]:focus,
+select:focus, 
+textarea:focus {
+	border: 1px solid var(--color-amber-600);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="search"]:hover,
+input[type="url"]:hover, 
+input[type="date"]:hover,
+select:hover, 
+textarea:hover {
+	border: 1px solid var(--color-gray-400)
+}
+
+input[type="text"]:active,
+input[type="email"]:active,
+input[type="password"]:active,
+input[type="number"]:active,
+input[type="tel"]:active,
+input[type="search"]:active,
+input[type="url"]:active, 
+input[type="date"]:active,
+select:active, 
+textarea:active {
+	border: 1px solid var(--color-gray-400);
+}
+
+
+textarea {
+  min-height: 100px; 
+  resize: none;
+}
+
+select {
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  padding-right: 30px; 
+}
+
+input[type="checkbox"] {
+	border-radius: 4px;
+	width: 24px;
+	min-width: 24px;
+	height: 24px;
+	background-color: #fff;
+	border: 1px solid #BDBDBD;
+	transition: background-color 0.3s ease;
+	appearance: none;
+  	outline: none;
+	position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #0D5EBA;
+  border: 1px solid #0D5EBA;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  background: url('../images/check.svg');
+  width: 16px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"] {
+	appearance: none;
+	outline: none;
+	width: 24px;
+	height: 24px;
+	min-width: 24px;
+	border-radius: 50%;
+	border: 1px solid #0D5EBA;
+	position: relative;
+	appearance: none;
+  	outline: none;
+}
+
+input[type="radio"]:checked {
+	background-color: #fff;
+	border-color: #0D5EBA;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0D5EBA;
+}

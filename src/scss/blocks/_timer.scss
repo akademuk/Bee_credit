@@ -1,0 +1,126 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+@use "./layout/mixins" as *;
+@use "./layout/typography" as *;
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.base-timer {
+  position: relative;
+  max-width: 237px;
+  width: 100%;
+  height: 100%;
+  max-height: 237px;
+}
+
+.base-timer__svg {
+  transform: scaleX(1);
+  overflow: visible;
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 5px;
+  stroke: #f0f2f5;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.arc {
+  color: #ffc107;
+  stroke-linecap: butt;
+}
+
+.base-timer__label {
+  position: absolute;
+  max-width: 237px;
+  width: 100%;
+  height: 100%;
+  max-height: 237px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-900);
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 120%;
+
+  @media (min-width: $pc) {
+    font-size: 40px;
+  }
+}
+
+.timer-main.registration-main {
+  .registration-form .form__box:nth-last-of-type(1) {
+    padding: 24px;
+    gap: 26px;
+
+     @media (min-width: $pc) {
+        padding: 32px 48px;
+        gap: 32px;
+     }
+
+    .form__box-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      align-self: stretch;
+
+      h2 {
+        margin: 0;
+        color: #212121;
+        text-align: center;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 120%;
+
+        @media (min-width: $pc)  {
+            font-size: 29px;
+        }
+      }
+
+      p {
+        color: #212121;
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+
+        @media (min-width: $pc)  {
+            font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.timer-main.registration-main {
+.registration-container__image {
+  content: url("../images/timer-mobile.png");
+  object-fit: contain;
+
+  @media (min-width: $pc)  {
+    content: none;
+  }
+}
+}
