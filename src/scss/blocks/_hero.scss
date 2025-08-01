@@ -211,13 +211,12 @@
 	&:first-child {
 		color: var(--color-neutral-0);
 		background: url('../images/blur.svg') var(--color-gray-900);
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: right;
 
 		.card-hero__number {
 			color: var(--color-gray-900);
-
 			background: var(--color-amber-400);
 		}
 	}

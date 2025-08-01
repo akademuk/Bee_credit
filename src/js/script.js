@@ -9277,3 +9277,36 @@ if (shouldRunTimer) {
     timer.setAttribute("stroke-dasharray", circleDasharray);
   }
 }
+
+
+
+// Селекторы
+const openButtons  = document.querySelectorAll('.open-popup');
+const closeButtons = document.querySelectorAll('.close-popup');
+const overlay      = document.getElementById('popup-overlay');
+
+// Функции открытия/закрытия
+function openPopup() {
+  overlay.classList.add('show');
+  document.body.classList.add('no-scroll');
+}
+
+function closePopup() {
+  overlay.classList.remove('show');
+  document.body.classList.remove('no-scroll');
+}
+
+// Навешиваем события на все кнопки открытия
+openButtons.forEach(btn => {
+  btn.addEventListener('click', openPopup);
+});
+
+// Навешиваем события на все кнопки закрытия (внутри попапа)
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', closePopup);
+});
+
+// Закрытие по клику на фон
+overlay.addEventListener('click', e => {
+  if (e.target === overlay) closePopup();
+});

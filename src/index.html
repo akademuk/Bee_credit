@@ -5,36 +5,39 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- SEO Meta Tags -->
   <title>BeeCredit - Швидкі кредити онлайн до 20 000 грн | Мікрокредити в Україні</title>
-  <meta name="description" content="Отримайте швидкий кредит онлайн до 20 000 грн у BeeCredit. Мікрокредити без довідок, швидке рішення за 15 хвилин. Перший кредит під 0% річних. Заявка онлайн 24/7." />
-  <meta name="keywords" content="кредит онлайн, мікрокредит, швидкий кредит, кредит без довідок, BeeCredit, кредит в Україні, гроші до зарплати" />
+  <meta name="description"
+    content="Отримайте швидкий кредит онлайн до 20 000 грн у BeeCredit. Мікрокредити без довідок, швидке рішення за 15 хвилин. Перший кредит під 0% річних. Заявка онлайн 24/7." />
+  <meta name="keywords"
+    content="кредит онлайн, мікрокредит, швидкий кредит, кредит без довідок, BeeCredit, кредит в Україні, гроші до зарплати" />
   <meta name="author" content="BeeCredit" />
   <meta name="robots" content="index, follow" />
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="BeeCredit - Швидкі кредити онлайн до 20 000 грн" />
-  <meta property="og:description" content="Отримайте швидкий кредит онлайн до 20 000 грн у BeeCredit. Перший кредит під 0% річних." />
+  <meta property="og:description"
+    content="Отримайте швидкий кредит онлайн до 20 000 грн у BeeCredit. Перший кредит під 0% річних." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beecredit.com.ua" />
   <meta property="og:image" content="./images/og-image.png" />
   <meta property="og:locale" content="uk_UA" />
-  
+
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BeeCredit - Швидкі кредити онлайн" />
   <meta name="twitter:description" content="Отримайте швидкий кредит онлайн до 20 000 грн у BeeCredit" />
   <meta name="twitter:image" content="./images/og-image.png" />
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png" />
-  
+
   <!-- Preload Critical Resources -->
   <link rel="preload" href="./css/style.css" as="style" />
   <link rel="preload" href="./fonts/icomoon.woff" as="font" type="font/woff" crossorigin />
-  
+
   <link rel="stylesheet" href="./css/style.css" />
   <script src="./js/main.min.js" defer></script>
 </head>
@@ -309,7 +312,7 @@
                       <p class="calculator__info-value">10 570,66%</p>
                     </div>
                   </div>
-                  <button class="calculator__info-link credit-box__link">
+                  <button class="calculator__info-link credit-box__link open-popup">
                     <span class="icon-question"></span>Графік платежів
                   </button>
                   <p class="calculator__info-warning">
@@ -1171,7 +1174,8 @@
               <h2 class="articles__title">Статті та новини</h2>
               <div class="swiper-navigation">
                 <div class="articles-button-prev"><span class="credit-form__submit-icon icon-chevron-left"></span></div>
-                <div class="articles-button-next"> <span class="credit-form__submit-icon icon-chevron-right"></span></div>
+                <div class="articles-button-next"> <span class="credit-form__submit-icon icon-chevron-right"></span>
+                </div>
               </div>
               <a href="#" class="btn">Дивитися всі <span class="icon-chevron-right"></span></a>
             </div>
@@ -1452,14 +1456,139 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__text">
-           ТОВ "МУЛЬТІКРЕДИТ" Свідоцтво про реєстрацію фінансової установи ФК №В0000506 від 28.01.2022, видане Національним банком України". "Ліцензія Національного банку України з надання коштів та банківських металів у кредит" від 29.03.2024 р.
+            ТОВ "МУЛЬТІКРЕДИТ" Свідоцтво про реєстрацію фінансової установи ФК №В0000506 від 28.01.2022, видане
+            Національним банком України". "Ліцензія Національного банку України з надання коштів та банківських металів
+            у кредит" від 29.03.2024 р.
           </div>
           <p class="copyright">
-© 2025 BeeCredit®. All content is available under the Creative Commons Attribution 4.0 International license unless otherwise noted. 
+            © 2025 BeeCredit®. All content is available under the Creative Commons Attribution 4.0 International license
+            unless otherwise noted.
           </p>
         </div>
       </div>
     </footer>
+  </div>
+
+
+
+  <div id="popup-overlay">
+    <div id="popup-menu" class="popup-menu">
+      <button class="close-popup" aria-label="Закрыть меню">
+        <span class="icon-close"></span>
+      </button>
+
+      <div class="popup-menu__content">
+        <div class="repayment-schedule">
+          <h2 class="repayment-schedule__title">Графік погашення:</h2>
+          <div class="repayment-schedule-scroll">
+            <table class="repayment-schedule__table">
+              <tbody>
+                <tr>
+                  <td>1-й платіж</td>
+                  <td>3 280 грн</td>
+                  <td>21.08.2025</td>
+                </tr>
+                <tr>
+                  <td>2-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>20.09.2025</td>
+                </tr>
+                <tr>
+                  <td>3-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>20.10.2025</td>
+                </tr>
+                <tr>
+                  <td>4-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.11.2025</td>
+                </tr>
+                <tr>
+                  <td>5-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.12.2025</td>
+                </tr>
+                <tr>
+                  <td>6-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>17.01.2026</td>
+                </tr>
+                <tr>
+                  <td>7-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>16.02.2026</td>
+                </tr>
+                <tr>
+                  <td>8-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.03.2026</td>
+                </tr>
+                <tr>
+                  <td>9-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.04.2026</td>
+                </tr>
+                <tr>
+                  <td>10-й платіж</td>
+                  <td>2 000 грн</td>
+                  <td>18.05.2026</td>
+                </tr>
+                  <tr>
+                  <td>1-й платіж</td>
+                  <td>3 280 грн</td>
+                  <td>21.08.2025</td>
+                </tr>
+                <tr>
+                  <td>2-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>20.09.2025</td>
+                </tr>
+                <tr>
+                  <td>3-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>20.10.2025</td>
+                </tr>
+                <tr>
+                  <td>4-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.11.2025</td>
+                </tr>
+                <tr>
+                  <td>5-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.12.2025</td>
+                </tr>
+                <tr>
+                  <td>6-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>17.01.2026</td>
+                </tr>
+                <tr>
+                  <td>7-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>16.02.2026</td>
+                </tr>
+                <tr>
+                  <td>8-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.03.2026</td>
+                </tr>
+                <tr>
+                  <td>9-й платіж</td>
+                  <td>3 200 грн</td>
+                  <td>18.04.2026</td>
+                </tr>
+                <tr>
+                  <td>10-й платіж</td>
+                  <td>2 000 грн</td>
+                  <td>18.05.2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 </body>
 
