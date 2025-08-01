@@ -235,3 +235,5 @@ test: додавання тестів
 ![Ukraine](https://img.shields.io/badge/Made%20in-Ukraine-blue.svg?labelColor=yellow)
 ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)
+#   B e e _ c r e d i t  
+ 
