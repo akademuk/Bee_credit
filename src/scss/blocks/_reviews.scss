@@ -5,6 +5,7 @@
 
 .reviews {
     padding: 49px 16px;
+    overflow: hidden;
 
     @media (min-width:$pc) {
         padding: 60px 52px;
