@@ -9307,3 +9307,19 @@ if (openButtons.length > 0 && closeButtons.length > 0 && overlay) {
 		if (e.target === overlay) closePopup();
 	});
 }
+
+// Находим все ссылки, которые ведут на якоря
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Получаем целевой элемент
+    const target = document.querySelector(this.getAttribute('href'));
+
+    // Плавно скроллим к якорю
+    window.scrollTo({
+      top: target.offsetTop,
+      behavior: 'smooth'
+    });
+  });
+});
