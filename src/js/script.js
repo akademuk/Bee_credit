@@ -9323,3 +9323,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.blog-section__tab');
+  
+  if (tabs.length > 0) {
+	tabs.forEach(tab => {
+	  tab.addEventListener('click', (e) => {
+		e.preventDefault();
+		
+		// Проверяем, есть ли data-target у таба
+		const targetId = tab.dataset.target;
+		if (!targetId) {
+		  console.error('Tab missing data-target attribute:', tab);
+		  return;
+		}
+		
+		// Сбрасываем все табы и секции
+		document.querySelectorAll('.blog-section__tab').forEach(t => t.classList.remove('active'));
+		document.querySelectorAll('.blog-section__content').forEach(c => c.classList.remove('show'));
+
+		// Активируем нажатый таб
+		tab.classList.add('active');
+		
+		// Активируем связанный блок контента
+		const targetElement = document.getElementById(targetId);
+		if (targetElement) {
+		  targetElement.classList.add('show');
+		} else {
+		  console.error('Target element not found:', targetId);
+		}
+	  });
+	});
+  }
+});
