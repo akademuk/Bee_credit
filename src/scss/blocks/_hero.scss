@@ -281,7 +281,6 @@
 		font-size: 21px;
 		font-weight: 600;
 		line-height: 1.2;
-		max-width: 80%;
 
 		&:not(:last-child) {
 			margin-bottom: 24px;
@@ -372,6 +371,7 @@
 
 		&:first-child {
 			.credit-form__label {
+				white-space: nowrap;
 				&:not(:last-child) {
 					margin-bottom: 16px;
 				}
