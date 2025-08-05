@@ -1,11 +1,3 @@
 .idea
 node_modules/
-# dist/ - commented out to allow GitHub Pages deployment
-
-# Development files - keep source files in git but ignore built files in root if needed
-# Uncomment these if you want to ignore built files in root:
-# /css/
-# /js/
-# /images/
-# /fonts/
-# /*.html
+# Keep dist folder for GitHub Pages deployment

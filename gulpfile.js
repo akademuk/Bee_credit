@@ -12,36 +12,22 @@ const webp = require("gulp-webp")
 // Paths
 const paths = {
     scss: "./src/scss/**/*.scss",
-    css: "./css",
+    css: "./dist/css",
     images: "./src/images/**/*.{jpg,jpeg,png}",
     videos: "./src/images/**/*.mp4",
     svg: "./src/images/**/*.svg",
-    imagesDist: "./images",
+    imagesDist: "./dist/images",
     html: "./src/**/*.html",
-    htmlDist: "./",
+    htmlDist: "./dist",
     js: "./src/js/**/*.js",
-    jsDist: "./js",
+    jsDist: "./dist/js",
     fonts: "./src/fonts/**/*",
-    fontsDist: "./fonts",
+    fontsDist: "./dist/fonts",
 }
 
-// Clean Root Folder (excluding src, node_modules, and config files)
+// Clean Dist Folder
 function clean() {
-    return deleteAsync([
-        "./css/**", 
-        "./images/**", 
-        "./js/**", 
-        "./fonts/**", 
-        "./*.html",
-        "!./src/**",
-        "!./node_modules/**",
-        "!./gulpfile.js",
-        "!./package.json",
-        "!./package-lock.json",
-        "!./.gitignore",
-        "!./README.md",
-        "!./.github/**"
-    ])
+    return deleteAsync(["./dist/**", "!./dist"])
 }
 
 // Compile SCSS to CSS
@@ -119,7 +105,7 @@ function scripts() {
 function serve() {
     browserSync.init({
         server: {
-            baseDir: "./",
+            baseDir: "./dist",
         },
         port: 3000,
         notify: false,
