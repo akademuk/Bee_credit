@@ -12,17 +12,17 @@ const webp = require("gulp-webp")
 // Paths
 const paths = {
     scss: "./src/scss/**/*.scss",
-    css: "./dist/css",
+    css: "./css",
     images: "./src/images/**/*.{jpg,jpeg,png}",
     videos: "./src/images/**/*.mp4",
     svg: "./src/images/**/*.svg",
-    imagesDist: "./dist/images",
+    imagesDist: "./images",
     html: "./src/**/*.html",
-    htmlDist: "./dist",
+    htmlDist: "./",
     js: "./src/js/**/*.js",
-    jsDist: "./dist/js",
+    jsDist: "./js",
     fonts: "./src/fonts/**/*",
-    fontsDist: "./dist/fonts",
+    fontsDist: "./fonts",
 }
 
 // Clean Dist Folder
@@ -77,7 +77,15 @@ function fonts() {
 function html() {
     return gulp
         .src(paths.html)
-        .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+        .pipe(htmlmin({ 
+            collapseWhitespace: true, 
+            removeComments: true,
+            removeRedundantAttributes: false,
+            removeEmptyAttributes: false,
+            caseSensitive: true,
+            minifyCSS: false,
+            minifyJS: false
+        }))
         .pipe(gulp.dest(paths.htmlDist))
         .pipe(browserSync.stream())
 }
