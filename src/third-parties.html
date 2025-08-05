@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Змінити пароль</title>
+    <title>Контакти третіх осіб</title>
     <script src="./js/main.min.js" defer></script>
 </head>
 
 <body>
-    <div class="page-holder page-holder-visible">
+    <div class="page-holder">
         <div class="wrapper">
             <header class="header" id="header">
                 <div class="container">
@@ -20,8 +20,8 @@
                                 alt="BeeCredit" /></a>
                         <nav class="header-menu-holder">
                             <button class="menu-close icon-close"></button>
-                            <a href="./index.html" class="header-logo header-logo--desktop"><img src="./images/logo.svg"
-                                    alt="BeeCredit" /></a>
+                            <a href="./index.html" class="header-logo header-logo--desktop"><img
+                                    src="./images/logo.svg" alt="BeeCredit" /></a>
                             <ul class="header-menu">
                                 <li class="menu-item active"><a href="#">Головна</a></li>
                                 <li class="menu-item menu-item-has-children">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </header>
-            <main class="main registration-main" id="main" style="overflow: visible;">
+            <main class="main registration-main" id="main">
                 <div class="breadcrumb">
                     <div class="container">
                         <ul class="breadcrumb__list">
@@ -70,95 +70,38 @@
                                 </a>
                             </li>
                             <li class="breadcrumb__item">
-                                <a href="./index.html"
-                                    class="breadcrumb__link breadcrumb__link--active"></span>Персональний кабінет
-                                    <span class="icon-chevron-right"></span>
-                                </a>
-                            </li>
-                            <li class="breadcrumb__item">
-                                <a href="#" class="breadcrumb__link">Змінити пароль</a>
+                                <a href="#" class="breadcrumb__link">Контакти третіх осіб</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="personal-account__section">
+                <div class="registration-container registration-container3">
                     <div class="container">
-                        <aside class="personal-account__sidebar">
-                            <div class="personal-account__sidebar-container">
-                                <div class="personal-account__sidebar-header">
-                                    <h1>👋 Вітаємо, Володимир Ващенко!</h1>
-                                    <button class="personal-account__sidebar-btn btn-primary" id="sidebarToggle">
-                                        <p class="sidebar-toggle-text"></p>
-                                        <div>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="personal-account__sidebar-main" id="sidebarMain">
-                                    <ul class="personal-account__sidebar-list">
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">Мої кредити</a>
-                                        </li>
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">Мої
-                                                дані</a>
-                                        </li>
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">Мої картки</a>
-                                        </li>
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">Iсторія кредитів</a>
-                                        </li>
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">Проплатити кредит</a>
-                                        </li>
-                                        <li
-                                            class="personal-account__sidebar-item personal-account__sidebar-item--active">
-                                            <a href="" class="personal-account__sidebar-link">Змінити пароль</a>
-                                        </li>
-                                        <li class="personal-account__sidebar-item">
-                                            <a href="" class="personal-account__sidebar-link">
-                                                <img src="./images/exit-icon.svg" width="24" height="24" alt="icon">
-                                                Вихiд</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </aside>
-
-                        <div class="personal-account__main">
-                            <h2>Змінити пароль</h2>
-
-                            <form class="personal-account__form-container personal-account__form-card">
-                                <div class="personal-account__form-section personal-account__main-history-credits-box">
-                                    <div class="personal-account__form-section--threeCol">
-                                        <div class="form__box-label">
-                                            <label for="password" class="form__label">Поточний пароль</label>
-                                            
-                                                <input type="text" id="password" class="form__input" required>
-                                            
-                                        </div>
-                                        <div class="form__box-label">
-                                            <label for="newPassword" class="form__label">Новий пароль</label>
-                                          
-                                                <input type="text" id="newPassword" class="form__input" required>
-                                           
-                                        </div>
-                                        <div class="form__box-label">
-                                            <label for="doublePassword" class="form__label">Підтвердіть пароль</label>
-                                            
-                                                <input type="text" id="doublePassword" class="form__input" required>
-                                           
-                                        </div>
+                        <div class="registration-content">
+                            <h1>Контакти третіх осіб</h1>
+                            <h2>Для нашої компанії важливо забезпечити фінансову стабільність і безпеку наших клієнтів.</h2>
+                            <p>Просимо вас залишити контактні дані третіх осіб, що підвищить Ваші шанси на погодження кредиту.</p>
+                        </div>
+                        <div class="registration-form">
+                            <form class="form">
+                                <div class="form__box">
+                                    <div class="form__box-label">
+                                        <label for="phone" class="form__label">Телефон</label>
+                                        <input type="tel" id="phone" class="form__input" placeholder="+380XXXXXXXXX" required>
                                     </div>
-                                </div>
-                                <div class="personal-account__form-btn">
-                                    <button type="submit" class="form__submit btn">Зберегти
-                                        <span class="icon-check"></span>
-                                    </button>
+
+                                    <div class="form__box-label">
+                                        <label for="name" class="form__label">ПІБ</label>
+                                        <input type="text" id="name" class="form__input" placeholder="Ваше ПІБ" required>
+                                    </div>
+
+
+                                    <div class="form__actions">
+                                        <button type="submit" class="form__submit btn">Далі
+                                            <span class="icon-chevron-right"></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
