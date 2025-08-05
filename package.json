@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Bee Credit - Financial Services Website",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "gulp build",
     "dev": "gulp dev",

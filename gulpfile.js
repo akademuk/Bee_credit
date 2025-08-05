@@ -1,13 +1,17 @@
-const browserSync = require("browser-sync").create()
-const { deleteAsync } = require("del")
-const gulp = require("gulp")
-const cleanCSS = require("gulp-clean-css")
-const concat = require("gulp-concat")
-const htmlmin = require("gulp-htmlmin")
-const plumber = require("gulp-plumber")
-const sass = require("gulp-sass")(require("sass"))
-const uglify = require("gulp-uglify")
-const webp = require("gulp-webp")
+import browserSync from "browser-sync"
+import { deleteAsync } from "del"
+import gulp from "gulp"
+import cleanCSS from "gulp-clean-css"
+import concat from "gulp-concat"
+import htmlmin from "gulp-htmlmin"
+import plumber from "gulp-plumber"
+import dartSass from "sass"
+import gulpSass from "gulp-sass"
+import uglify from "gulp-uglify"
+import webp from "gulp-webp"
+
+const sass = gulpSass(dartSass)
+const browser = browserSync.create()
 
 // Paths
 const paths = {
@@ -38,7 +42,7 @@ function styles() {
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
         .pipe(gulp.dest(paths.css))
-        .pipe(browserSync.stream())
+        .pipe(browser.stream())
 }
 
 // Copy SVG files
@@ -87,7 +91,7 @@ function html() {
             minifyJS: false
         }))
         .pipe(gulp.dest(paths.htmlDist))
-        .pipe(browserSync.stream())
+        .pipe(browser.stream())
 }
 
 // Process JS
@@ -98,12 +102,12 @@ function scripts() {
         .pipe(concat("main.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest(paths.jsDist))
-        .pipe(browserSync.stream())
+        .pipe(browser.stream())
 }
 
 // Serve with Browser-Sync
 function serve() {
-    browserSync.init({
+    browser.init({
         server: {
             baseDir: "./dist",
         },
@@ -112,10 +116,10 @@ function serve() {
     })
 
     gulp.watch(paths.scss, styles)
-    gulp.watch("./src/images/**/*", processImages).on("change", browserSync.reload)
+    gulp.watch("./src/images/**/*", processImages).on("change", browser.reload)
     gulp.watch(paths.html, html)
     gulp.watch(paths.js, scripts)
-    gulp.watch(paths.fonts, fonts).on("change", browserSync.reload)
+    gulp.watch(paths.fonts, fonts).on("change", browser.reload)
 }
 
 // Build task
