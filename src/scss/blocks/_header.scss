@@ -26,38 +26,42 @@
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15) inset;
+	backdrop-filter: blur(12px);
 
 	@media (min-width: $pc) {
 		max-width: unset;
 		padding: 8px 16px 8px 24px;
 	}
 
-	&:before {
-		content: '';
-		inset: 0;
-		box-shadow: 0 0 8px rgba($black, 0.3) inset;
-		border-radius: 99px;
-		background: rgba($white, 0.75);
-		backdrop-filter: blur(12px);
-		position: absolute;
-		display: block;
-		overflow: hidden;
-		z-index: -1;
-	}
+	// &:before {
+	// 	content: '';
+	// 	inset: 0;
+	// 	box-shadow: 0 0 8px rgba($black, 0.3) inset;
+	// 	border-radius: 99px;
+	// 	background: rgba($white, 0.75);
+	// 	backdrop-filter: blur(12px);
+	// 	position: absolute;
+	// 	display: block;
+	// 	overflow: hidden;
+	// 	z-index: -1;
+	// }
 
-	&:after {
-		content: '';
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		right: 0;
-		background: rgba($black, 0.7);
-		opacity: 0;
-		visibility: hidden;
-		z-index: -1;
-		transition: all 0.3s ease-in-out;
-	}
+	// &:after {
+	// 	content: '';
+	// 	position: fixed;
+	// 	width: 100vw;
+	// 	height: 100vh;
+	// 	top: 0;
+	// 	right: 0;
+	// 	background: rgba($black, 0.7);
+	// 	opacity: 0;
+	// 	visibility: hidden;
+	// 	z-index: -1;
+	// 	transition: all 0.3s ease-in-out;
+	// }
 
 	.header-active & {
 		&:after {
@@ -135,6 +139,8 @@
 		text-decoration: none;
 		padding: 6px 12px;
 		display: inline-block;
+		text-align: left;
+		width: 100%;
 		transition: all 0.3s ease-in-out;
 
 		&:hover {
@@ -281,6 +287,7 @@
 		padding: 6px 10px;
 		border-radius: 99px;
 		border: 2px solid var(--color-gray-200);
+		background: var(--color-neutral-0);
 		transition: all 0.3s ease-in-out;
 
 		&:hover {

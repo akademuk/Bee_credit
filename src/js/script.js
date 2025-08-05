@@ -9407,10 +9407,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	function toggleSidebar() {
 		if (window.innerWidth < 1280) {
 			const isActive = sidebarToggle.classList.contains('active');
-			
+
 			sidebarToggle.classList.toggle('active');
 			sidebarMain.classList.toggle('open');
-			
+
 			// Меняем текст в зависимости от состояния ПОСЛЕ переключения
 			if (sidebarToggle.classList.contains('active')) {
 				toggleText.textContent = 'Згорнути';
@@ -9421,12 +9421,28 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	sidebarToggle.addEventListener('click', toggleSidebar);
-	
+
 	window.addEventListener('resize', function () {
 		if (window.innerWidth >= 1280) {
 			sidebarToggle.classList.remove('active');
 			sidebarMain.classList.remove('open');
 			toggleText.textContent = 'Моє меню';
 		}
+	});
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	const deleteButtons = document.querySelectorAll('.personal-account__form-card-delate');
+
+	deleteButtons.forEach(button => {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+			const cardContainer = this.closest('.form__box-label');
+			if (cardContainer) {
+				cardContainer.remove();
+			}
+		});
 	});
 });
