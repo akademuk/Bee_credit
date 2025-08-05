@@ -25,9 +25,23 @@ const paths = {
     fontsDist: "./fonts",
 }
 
-// Clean Dist Folder
+// Clean Root Folder (excluding src, node_modules, and config files)
 function clean() {
-    return deleteAsync(["./dist/**", "!./dist"])
+    return deleteAsync([
+        "./css/**", 
+        "./images/**", 
+        "./js/**", 
+        "./fonts/**", 
+        "./*.html",
+        "!./src/**",
+        "!./node_modules/**",
+        "!./gulpfile.js",
+        "!./package.json",
+        "!./package-lock.json",
+        "!./.gitignore",
+        "!./README.md",
+        "!./.github/**"
+    ])
 }
 
 // Compile SCSS to CSS
@@ -105,7 +119,7 @@ function scripts() {
 function serve() {
     browserSync.init({
         server: {
-            baseDir: "./dist",
+            baseDir: "./",
         },
         port: 3000,
         notify: false,
