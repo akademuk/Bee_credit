@@ -1,17 +1,25 @@
-import browserSync from "browser-sync"
-import { deleteAsync } from "del"
-import gulp from "gulp"
-import cleanCSS from "gulp-clean-css"
-import concat from "gulp-concat"
-import htmlmin from "gulp-htmlmin"
-import plumber from "gulp-plumber"
-import dartSass from "sass"
-import gulpSass from "gulp-sass"
-import uglify from "gulp-uglify"
-import webp from "gulp-webp"
+const browserSync = require("browser-sync").create()
+const gulp = require("gulp")
+const cleanCSS = require("gulp-clean-css")
+const concat = require("gulp-concat")
+const htmlmin = require("gulp-htmlmin")
+const plumber = require("gulp-plumber")
+const sass = require("gulp-sass")(require("sass"))
+const uglify = require("gulp-uglify")
+const webp = require("gulp-webp")
+const fs = require('fs')
+const path = require('path')
 
-const sass = gulpSass(dartSass)
-const browser = browserSync.create()
+// Simple delete function instead of del
+function deleteSync(patterns) {
+    patterns.forEach(pattern => {
+        if (pattern.startsWith('!')) return
+        const dirPath = pattern.replace('/**', '')
+        if (fs.existsSync(dirPath)) {
+            fs.rmSync(dirPath, { recursive: true, force: true })
+        }
+    })
+}
 
 // Paths
 const paths = {
@@ -31,7 +39,8 @@ const paths = {
 
 // Clean Dist Folder
 function clean() {
-    return deleteAsync(["./dist/**", "!./dist"])
+    deleteSync(["./dist/**", "!./dist"])
+    return Promise.resolve()
 }
 
 // Compile SCSS to CSS
@@ -42,7 +51,7 @@ function styles() {
         .pipe(sass().on("error", sass.logError))
         .pipe(cleanCSS())
         .pipe(gulp.dest(paths.css))
-        .pipe(browser.stream())
+        .pipe(browserSync.stream())
 }
 
 // Copy SVG files
@@ -91,7 +100,7 @@ function html() {
             minifyJS: false
         }))
         .pipe(gulp.dest(paths.htmlDist))
-        .pipe(browser.stream())
+        .pipe(browserSync.stream())
 }
 
 // Process JS
@@ -102,12 +111,12 @@ function scripts() {
         .pipe(concat("main.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest(paths.jsDist))
-        .pipe(browser.stream())
+        .pipe(browserSync.stream())
 }
 
 // Serve with Browser-Sync
 function serve() {
-    browser.init({
+    browserSync.init({
         server: {
             baseDir: "./dist",
         },
@@ -116,10 +125,10 @@ function serve() {
     })
 
     gulp.watch(paths.scss, styles)
-    gulp.watch("./src/images/**/*", processImages).on("change", browser.reload)
+    gulp.watch("./src/images/**/*", processImages).on("change", browserSync.reload)
     gulp.watch(paths.html, html)
     gulp.watch(paths.js, scripts)
-    gulp.watch(paths.fonts, fonts).on("change", browser.reload)
+    gulp.watch(paths.fonts, fonts).on("change", browserSync.reload)
 }
 
 // Build task
